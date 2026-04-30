@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { getPalette } from './palettes.js'
 
@@ -276,7 +276,7 @@ function Section1() {
           viewport={{ once: true }}
         >
           <h3>🍜 紫阳古街 · 吃吃吃</h3>
-          <p>12:00-12:30 抵达，千年古街青石板路蜿蜒向前，两侧热气腾腾的小吃摊一字排开。海苔饼的焦香、蛋清羊尾的甜糯、麦虾面的鲜浓……一条街吃到饱。</p>
+          <p>12:00-12:30 抵达，千年古街青石板路蜿蜒向前，两侧热气腾腾的小吃摊一字排开。海苔饼的焦香、蛋清羊尾的甜糯、麦虾面的鲜浓……</p>
         </motion.div>
 
         <motion.div
@@ -442,8 +442,8 @@ function Section3() {
           <div className="card-row">
             <span className="card-icon-lg">🏨</span>
             <div>
-              <h3>驱车前往仙居</h3>
-              <p>晚餐后开车约1小时，入住<strong>吾悦广场附近酒店</strong>（待定），养精蓄锐。</p>
+              <h3>开车前往仙居</h3>
+              <p>晚餐后开车约1小时，入住<strong>仙居附近酒店</strong>（待定），养精蓄锐。</p>
             </div>
           </div>
         </motion.div>
@@ -603,20 +603,35 @@ function App() {
   const [active, setActive] = useState(0)
   const contentRef = useRef(null)
 
-  const handleScroll = useCallback(() => {
-    const el = contentRef.current
-    if (!el) return
-    const h = el.clientHeight
-    const idx = Math.round(el.scrollTop / h)
-    setActive(Math.max(0, Math.min(idx, 6)))
-  }, [])
-
   useEffect(() => {
-    const el = contentRef.current
-    if (!el) return
-    el.addEventListener('scroll', handleScroll, { passive: true })
-    return () => el.removeEventListener('scroll', handleScroll)
-  }, [handleScroll])
+    const panel = contentRef.current
+    if (!panel) return
+
+    const els = panel.querySelectorAll('.snap-section')
+    const ratios = new Array(els.length).fill(0)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          const idx = Number(entry.target.dataset.index)
+          ratios[idx] = entry.intersectionRatio
+        }
+        let best = 0
+        let bestIdx = 0
+        for (let i = 0; i < ratios.length; i++) {
+          if (ratios[i] > best) {
+            best = ratios[i]
+            bestIdx = i
+          }
+        }
+        if (best > 0) setActive(bestIdx)
+      },
+      { threshold: [0, 0.25, 0.5, 0.75, 1] },
+    )
+
+    for (const el of els) observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     const palette = getPalette(active)
