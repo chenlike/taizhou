@@ -8,6 +8,8 @@ import danqingyangwei from './assets/紫阳街吃的_蛋清羊尾.png'
 import maixia from './assets/紫阳街吃的_麦虾.png'
 import wufanmaci from './assets/紫阳街吃的_乌饭麻糍.png'
 import bowuguan from './assets/台州府城博物馆.png'
+import renminyinhang from './assets/中国人民银行台州分行旧址.png'
+import wenmiao from './assets/台州府文庙.png'
 import chengqiang from './assets/台州府城墙.png'
 import fucheng from './assets/台州府城.png'
 import shasundoumian from './assets/荣小馆紫阳街店_沙蒜豆面.png'
@@ -317,14 +319,25 @@ function Section2() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
           viewport={{ once: true }}
         >
+          <h3>🏯 府城漫步路线</h3>
+          <p>博物馆 → 人行旧址 → 文庙 → 朝天门上城墙。体力好继续走到揽胜门，俯瞰东湖与灵江。</p>
+        </motion.div>
+
+        <motion.div
+          className="page-card"
+          initial={{ opacity: 0, y: 24, rotate: -1 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.14 }}
+          viewport={{ once: true }}
+        >
           <div className="card-row">
             <div className="card-thumb">
               <img src={bowuguan} alt="台州府城墙博物馆" />
             </div>
             <div>
-              <h3>台州府城墙博物馆</h3>
+              <h3>① 台州府城墙博物馆</h3>
               <p>紫阳街旁，馆藏跨越新石器到明清。半小时立体认识千年古城。</p>
-              <span className="tag green">必去</span>
+              <span className="tag green">walk walk~</span>
             </div>
           </div>
         </motion.div>
@@ -333,7 +346,43 @@ function Section2() {
           className="page-card"
           initial={{ opacity: 0, y: 24, rotate: -1 }}
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.16 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <div className="card-row">
+            <div className="card-thumb">
+              <img src={renminyinhang} alt="中国人民银行台州支行旧址" />
+            </div>
+            <div>
+              <h3>② 中国人民银行台州支行旧址</h3>
+              <p>民国风格建筑，顺路一逛。老街深处的金融旧梦，拍照很出片。</p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="page-card"
+          initial={{ opacity: 0, y: 24, rotate: -1 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.26 }}
+          viewport={{ once: true }}
+        >
+          <div className="card-row">
+            <div className="card-thumb">
+              <img src={wenmiao} alt="台州府文庙" />
+            </div>
+            <div>
+              <h3>③ 台州府文庙</h3>
+              <p>从旧址往东不远，规模不大但保存完整。红墙古柏，闹中取静。</p>
+            </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="page-card"
+          initial={{ opacity: 0, y: 24, rotate: -1 }}
+          whileInView={{ opacity: 1, y: 0, rotate: 0 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.32 }}
           viewport={{ once: true }}
         >
           <div className="card-row">
@@ -341,12 +390,13 @@ function Section2() {
               <img src={fucheng} alt="台州府城" />
             </div>
             <div>
-              <h3>台州府城附近</h3>
-              <p>"江南八达岭"，依山临江。登城远眺灵江如练。爬不爬看体力，走一小段也不亏。</p>
-              <span className="tag gold">看情况</span>
+              <h3>④ 朝天门 · 上台州府城墙</h3>
+              <p>文庙往北即达。"江南八达岭"，依山临江。登城远眺灵江如练。</p>
+              <span className="tag gold">看体力</span>
             </div>
           </div>
         </motion.div>
+
       </div>
     </section>
   )
