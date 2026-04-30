@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { motion } from 'motion/react'
+import { motion, AnimatePresence } from 'motion/react'
 import { getPalette } from './palettes.js'
 
 import coverBg from './assets/神仙居.png'
@@ -23,13 +23,13 @@ import xiaolongbao from './assets/嵊州_小笼包.png'
 import chaoniangao from './assets/嵊州_炒年糕.png'
 
 const STOPS = [
-  { id: 0, place: '出发', time: '10:30', emoji: '🚗' },
+  { id: 0, place: '出发!', time: '10:30', emoji: '🚗' },
   { id: 1, place: '紫阳街', time: '12:00', emoji: '🍜' },
   { id: 2, place: '府城墙', time: '下午', emoji: '🏯' },
   { id: 3, place: '仙居', time: '傍晚', emoji: '🌙' },
   { id: 4, place: '神仙居', time: 'DAY2', emoji: '⛰️' },
   { id: 5, place: '仙境', time: '山顶', emoji: '🏔️' },
-  { id: 6, place: '嵊州', time: '晚间', emoji: '🥟' },
+  { id: 6, place: '嵊州&回家', time: '晚间', emoji: '🥟' },
 ]
 
 const NODE_Y = [7, 22, 36, 51, 65, 78, 90]
@@ -579,6 +579,26 @@ function Section6() {
 
 const SECTIONS = [Section0, Section1, Section2, Section3, Section4, Section5, Section6]
 
+function TimeIndicator({ active }) {
+  const isNight = active === 3 || active === 6
+  return (
+    <div className="time-indicator">
+      <AnimatePresence mode="wait">
+        <motion.span
+          key={isNight ? 'moon' : 'sun'}
+          className="time-icon"
+          initial={{ scale: 0, rotate: isNight ? 90 : -90, opacity: 0 }}
+          animate={{ scale: 1, rotate: 0, opacity: 1 }}
+          exit={{ scale: 0, rotate: isNight ? -90 : 90, opacity: 0 }}
+          transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          {isNight ? '🌙' : '☀️'}
+        </motion.span>
+      </AnimatePresence>
+    </div>
+  )
+}
+
 function App() {
   const [active, setActive] = useState(0)
   const contentRef = useRef(null)
@@ -610,6 +630,7 @@ function App() {
     <div className="app">
       <RoutePanel active={active} />
       <main className="content-panel" ref={contentRef}>
+        <TimeIndicator active={active} />
         {SECTIONS.map((Section, i) => (
           <Section key={i} />
         ))}
