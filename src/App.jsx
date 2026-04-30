@@ -217,7 +217,7 @@ function Section0() {
           浙江 · 台州
           <span className="cover-en">TAIZHOU</span>
         </h1>
-        <p className="cover-line">首日烟火府城 · 次日仙居人间</p>
+        <p className="cover-line">烟火府城 · 仙居人间</p>
       </motion.div>
       <motion.div
         className="cover-scroll"
