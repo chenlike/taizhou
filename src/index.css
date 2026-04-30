@@ -28,56 +28,20 @@
 body,
 .snap-section,
 .content-panel,
-.route-panel,
-.route-bg {
-  transition: background-color 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+.route-panel {
+  transition: background-color 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-body,
-.cover-title,
-.cover-line,
-.cover-en,
-.cover-scroll,
-.page-title,
-.page-card h3,
-.page-card p,
-.card-row h3,
-.card-row p,
-.end-card p,
-.end-sub,
-.node-label,
-.divider-label {
-  transition: color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.page-card,
-.cover-tag {
+.page-card {
   transition: background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               border-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              box-shadow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.page-badge {
-  transition: background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.node-dot {
-  transition: all 0.4s ease, background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+              box-shadow 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .route-svg path {
   transition: stroke 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.route-divider .divider-dash {
-  transition: background 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.content-panel::-webkit-scrollbar-thumb {
-  transition: background 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 html {
@@ -199,7 +163,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.4s ease;
+  transition: width 0.4s ease, height 0.4s ease, box-shadow 0.4s ease,
+              background-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
 }
 

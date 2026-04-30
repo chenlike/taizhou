@@ -2,25 +2,25 @@ import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
 import { getPalette } from './palettes.js'
 
-import coverBg from './assets/神仙居.png'
-import ziyangStreet from './assets/紫阳街1.jpeg'
-import haitaibing from './assets/紫阳街吃的_海苔饼.png'
-import danqingyangwei from './assets/紫阳街吃的_蛋清羊尾.png'
-import maixia from './assets/紫阳街吃的_麦虾.png'
-import wufanmaci from './assets/紫阳街吃的_乌饭麻糍.png'
-import bowuguan from './assets/台州府城博物馆.png'
-import renminyinhang from './assets/中国人民银行台州分行旧址.png'
-import wenmiao from './assets/台州府文庙.png'
-import chengqiang from './assets/台州府城墙.png'
-import fucheng from './assets/台州府城.png'
-import shasundoumian from './assets/荣小馆紫阳街店_沙蒜豆面.png'
-import dahuangyu from './assets/荣小馆紫阳街店_家烧大黄鱼.png'
-import shenxianju from './assets/神仙居.png'
-import guanyinfeng from './assets/神仙居_观音峰.png'
-import ruyiqiao from './assets/神仙居_如意桥.png'
-import nantianding from './assets/神仙居_南天顶观景台.png'
-import xiaolongbao from './assets/嵊州_小笼包.png'
-import chaoniangao from './assets/嵊州_炒年糕.png'
+const coverBg = '/images/神仙居.png'
+const ziyangStreet = '/images/紫阳街1.jpeg'
+const haitaibing = '/images/紫阳街吃的_海苔饼.png'
+const danqingyangwei = '/images/紫阳街吃的_蛋清羊尾.png'
+const maixia = '/images/紫阳街吃的_麦虾.png'
+const wufanmaci = '/images/紫阳街吃的_乌饭麻糍.png'
+const bowuguan = '/images/台州府城博物馆.png'
+const renminyinhang = '/images/中国人民银行台州分行旧址.png'
+const wenmiao = '/images/台州府文庙.png'
+const chengqiang = '/images/台州府城墙.png'
+const fucheng = '/images/台州府城.png'
+const shasundoumian = '/images/荣小馆紫阳街店_沙蒜豆面.png'
+const dahuangyu = '/images/荣小馆紫阳街店_家烧大黄鱼.png'
+const shenxianju = '/images/神仙居.png'
+const guanyinfeng = '/images/神仙居_观音峰.png'
+const ruyiqiao = '/images/神仙居_如意桥.png'
+const nantianding = '/images/神仙居_南天顶观景台.png'
+const xiaolongbao = '/images/嵊州_小笼包.png'
+const chaoniangao = '/images/嵊州_炒年糕.png'
 
 const STOPS = [
   { id: 0, place: '出发!', time: '10:30', emoji: '🚗' },
@@ -177,7 +177,7 @@ function Section0() {
         animate={{ opacity: 0.18, scale: 1 }}
         transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <img src={coverBg} alt="" />
+        <img loading="lazy"src={coverBg} alt="" />
       </motion.div>
 
       <motion.div
@@ -247,7 +247,7 @@ function Section1() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
-          <img src={ziyangStreet} alt="紫阳古街" />
+          <img loading="lazy"src={ziyangStreet} alt="紫阳古街" />
         </motion.div>
 
         <motion.div
@@ -286,10 +286,10 @@ function Section1() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.22, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={haitaibing} alt="海苔饼" /><span>海苔饼</span></motion.div>
-          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.28, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={danqingyangwei} alt="蛋清羊尾" /><span>蛋清羊尾</span></motion.div>
-          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.34, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={maixia} alt="麦虾" /><span>麦虾面</span></motion.div>
-          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={wufanmaci} alt="乌饭麻糍" /><span>乌饭麻糍</span></motion.div>
+          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.22, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={haitaibing} alt="海苔饼" /><span>海苔饼</span></motion.div>
+          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.28, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={danqingyangwei} alt="蛋清羊尾" /><span>蛋清羊尾</span></motion.div>
+          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.34, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={maixia} alt="麦虾" /><span>麦虾面</span></motion.div>
+          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.72, rotate: -3 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={wufanmaci} alt="乌饭麻糍" /><span>乌饭麻糍</span></motion.div>
         </motion.div>
       </div>
     </section>
@@ -310,7 +310,7 @@ function Section2() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
-          <img src={chengqiang} alt="台州府城墙" />
+          <img loading="lazy"src={chengqiang} alt="台州府城墙" />
         </motion.div>
 
         <motion.div
@@ -333,7 +333,7 @@ function Section2() {
         >
           <div className="card-row">
             <div className="card-thumb">
-              <img src={bowuguan} alt="台州府城墙博物馆" />
+              <img loading="lazy"src={bowuguan} alt="台州府城墙博物馆" />
             </div>
             <div>
               <h3>① 台州府城墙博物馆</h3>
@@ -352,7 +352,7 @@ function Section2() {
         >
           <div className="card-row">
             <div className="card-thumb">
-              <img src={renminyinhang} alt="中国人民银行台州支行旧址" />
+              <img loading="lazy"src={renminyinhang} alt="中国人民银行台州支行旧址" />
             </div>
             <div>
               <h3>② 中国人民银行台州支行旧址</h3>
@@ -370,7 +370,7 @@ function Section2() {
         >
           <div className="card-row">
             <div className="card-thumb">
-              <img src={wenmiao} alt="台州府文庙" />
+              <img loading="lazy"src={wenmiao} alt="台州府文庙" />
             </div>
             <div>
               <h3>③ 台州府文庙</h3>
@@ -388,7 +388,7 @@ function Section2() {
         >
           <div className="card-row">
             <div className="card-thumb">
-              <img src={fucheng} alt="台州府城" />
+              <img loading="lazy"src={fucheng} alt="台州府城" />
             </div>
             <div>
               <h3>④ 朝天门 · 上台州府城墙</h3>
@@ -428,8 +428,8 @@ function Section3() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={shasundoumian} alt="沙蒜豆面" /><span>沙蒜豆面</span></motion.div>
-          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={dahuangyu} alt="家烧大黄鱼" /><span>家烧大黄鱼</span></motion.div>
+          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={shasundoumian} alt="沙蒜豆面" /><span>沙蒜豆面</span></motion.div>
+          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={dahuangyu} alt="家烧大黄鱼" /><span>家烧大黄鱼</span></motion.div>
         </motion.div>
 
         <motion.div
@@ -466,7 +466,7 @@ function Section4() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
-          <img src={shenxianju} alt="神仙居" />
+          <img loading="lazy"src={shenxianju} alt="神仙居" />
         </motion.div>
 
         <motion.div
@@ -514,7 +514,7 @@ function Section5() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
-          <img src={ruyiqiao} alt="如意桥" />
+          <img loading="lazy"src={ruyiqiao} alt="如意桥" />
         </motion.div>
 
         <motion.div
@@ -524,8 +524,8 @@ function Section5() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.12 }}
           viewport={{ once: true }}
         >
-          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.14, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={guanyinfeng} alt="观音峰" /><span>观音峰</span></motion.div>
-          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.22, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={nantianding} alt="南天顶观景台" /><span>南天顶</span></motion.div>
+          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.14, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={guanyinfeng} alt="观音峰" /><span>观音峰</span></motion.div>
+          <motion.div className="img-card" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.22, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={nantianding} alt="南天顶观景台" /><span>南天顶</span></motion.div>
         </motion.div>
       </div>
     </section>
@@ -557,8 +557,8 @@ function Section6() {
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.08 }}
           viewport={{ once: true }}
         >
-          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={xiaolongbao} alt="嵊州小笼包" /><span>小笼包</span></motion.div>
-          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img src={chaoniangao} alt="嵊州炒年糕" /><span>炒年糕</span></motion.div>
+          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={xiaolongbao} alt="嵊州小笼包" /><span>小笼包</span></motion.div>
+          <motion.div className="img-card tall" initial={{ opacity: 0, scale: 0.78, rotate: 2 }} whileInView={{ opacity: 1, scale: 1, rotate: 0 }} transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }} viewport={{ once: true }}><img loading="lazy"src={chaoniangao} alt="嵊州炒年糕" /><span>炒年糕</span></motion.div>
         </motion.div>
 
         <motion.div
@@ -602,6 +602,7 @@ function TimeIndicator({ active }) {
 function App() {
   const [active, setActive] = useState(0)
   const contentRef = useRef(null)
+  const activeRef = useRef(0)
 
   useEffect(() => {
     const panel = contentRef.current
@@ -624,9 +625,12 @@ function App() {
             bestIdx = i
           }
         }
-        if (best > 0) setActive(bestIdx)
+        if (best > 0 && bestIdx !== activeRef.current) {
+          activeRef.current = bestIdx
+          setActive(bestIdx)
+        }
       },
-      { threshold: [0, 0.25, 0.5, 0.75, 1] },
+      { threshold: [0.25, 0.75] },
     )
 
     for (const el of els) observer.observe(el)
