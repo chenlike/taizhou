@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion } from 'motion/react'
+import { getPalette } from './palettes.js'
 
 import coverBg from './assets/神仙居.png'
 import ziyangStreet from './assets/紫阳街1.jpeg'
@@ -539,14 +540,14 @@ function Section6() {
         <h2 className="page-title">嵊州晚饭 · 返程</h2>
 
         <motion.div
-          className="page-card highlight d2"
+          className="page-card end-card"
           initial={{ opacity: 0, y: 24, rotate: -1 }}
           whileInView={{ opacity: 1, y: 0, rotate: 0 }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           viewport={{ once: true }}
         >
           <h3>🥟 路过嵊州，犒劳自己</h3>
-          <p>神仙居返程顺路，<strong>富豪街</strong>或其他热闹老街吃个晚饭。小笼包、炒年糕、榨面，嵊州小吃绝不踩雷。</p>
+          <p>神仙居返程顺路，<strong>富豪街 / 越秀路</strong>或其他热闹老街吃个晚饭。小笼包、炒年糕、榨面~。</p>
         </motion.div>
 
         <motion.div
@@ -596,6 +597,14 @@ function App() {
     el.addEventListener('scroll', handleScroll, { passive: true })
     return () => el.removeEventListener('scroll', handleScroll)
   }, [handleScroll])
+
+  useEffect(() => {
+    const palette = getPalette(active)
+    const root = document.documentElement
+    for (const [key, value] of Object.entries(palette)) {
+      root.style.setProperty(key, value)
+    }
+  }, [active])
 
   return (
     <div className="app">
